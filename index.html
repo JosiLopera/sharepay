@@ -21,7 +21,7 @@
 			height: 300px;
 		}
 
-		.elem{
+		.elem, #tDate{
 			color: #fff;
 		}
 
@@ -61,7 +61,7 @@
 					  <div class="form-group">
 					    <label for="exp" class="col-sm-4 control-label">Date d'expiration</label>
 					    <div class="col-sm-8">
-					      <input type="month" class="form-control listernInput" data="dDate" id="exp" placeholder="Date d'expiration">
+					      <input type="month" class="form-control listernInput" id="exp" placeholder="Date d'expiration">
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -89,7 +89,7 @@
 					<div id="tNum" class="elem" data="dNum">2154 4565 3454 3465</div>
 					<div class="row">
 						<div class="col-md-6">
-							<div id="tDate" class="elem" data="dDate">2015-08</div>
+							<div id="tDate">2015-08</div>
 						</div>
 						<div class="col-md-6">
 							<div id="tCry" class="elem" data="dCry">960</div>
@@ -103,7 +103,7 @@
 </body>
 	<script>
 
-	$(".listernInput").change(function(){
+	$(".listernInput").keyup(function(){
 		var val = $(this).val(),
 			data = $(this).attr('data');
 
@@ -113,6 +113,10 @@
 			};
 		})
 
+	});
+
+	$("#exp").change(function(){
+		$("#tDate").html($(this).val());
 	});
 
 
