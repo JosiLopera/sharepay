@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SharePay</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<style>
+		.cont{
+			margin: 5%;
+		}
+
+		#imgCarte{
+			background-image: url('card2.png');
+			background-repeat: no-repeat;
+			text-align: center;
+		    padding-top: 30px;
+			height: 300px;
+		}
+
+		.elem{
+			color: #fff;
+		}
+
+		#tNom{
+			font-size: 30px;
+		}
+
+		#tNum{
+			margin-top: 95px;
+    		font-size: 22px;
+		}
+
+		#tCry{
+		    margin-top: 20px;
+    		margin-right: 100px;
+		}
+
+		#tDate{
+			margin-top: 20px;
+    		margin-left: 20px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="container-fluid cont">
+		<div class="row">
+			<div class="col-md-6">
+				<form class="form-horizontal">
+					  <div class="form-group">
+					    <label for="nCarte" class="col-sm-4 control-label">Numéro de Carte</label>
+					    <div class="col-sm-8">
+					      <input type="text" class="form-control listernInput" data="dNum" id="nCarte" placeholder="Numéro de Carte">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="exp" class="col-sm-4 control-label">Date d'expiration</label>
+					    <div class="col-sm-8">
+					      <input type="month" class="form-control listernInput" data="dDate" id="exp" placeholder="Date d'expiration">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="cry" class="col-sm-4 control-label">Cryptogramme</label>
+					    <div class="col-sm-8">
+					      <input type="text" class="form-control listernInput" data="dCry" id="cry" placeholder="Cryptogramme">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="nom" class="col-sm-4 control-label">Nom</label>
+					    <div class="col-sm-8">
+					      <input type="text" class="form-control listernInput" data="dNom" id="nom" placeholder="Nom">
+					    </div>
+					  </div>
+					  <!-- <div class="form-group">
+					    <div class="col-sm-offset-10 col-sm-2">
+					      <button type="submit" class="btn btn-default">Sign in</button>
+					    </div>
+					  </div> -->
+				</form>
+			</div>
+			<div class="col-md-6">
+				<div id="imgCarte">
+					<div id="tNom" class="elem" data="dNom">Josimar Lopera</div>
+					<div id="tNum" class="elem" data="dNum">2154 4565 3454 3465</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div id="tDate" class="elem" data="dDate">2015-08</div>
+						</div>
+						<div class="col-md-6">
+							<div id="tCry" class="elem" data="dCry">960</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+	<script>
+
+	$(".listernInput").change(function(){
+		var val = $(this).val(),
+			data = $(this).attr('data');
+
+		$(".elem").each(function(){
+			if($(this).attr('data')==data){
+				$(this).html(val);
+			};
+		})
+
+	});
+
+
+	</script>
+</html>
